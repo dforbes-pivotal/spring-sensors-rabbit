@@ -1,0 +1,14 @@
+# rmq-claim-policy.yaml
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ResourceClaimPolicy
+metadata:
+  name: rabbitmqcluster-cross-namespace
+  namespace: rabbit-service-instances
+spec:
+  consumingNamespaces:
+  - 'donald'
+  subject:
+    group: rabbitmq.com
+    kind: RabbitmqCluster
+
